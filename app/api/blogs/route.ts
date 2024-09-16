@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server"
 import { getPosts } from "@/lib/data";
 import {addPost} from "@/lib/data";
-export const GET=async (req:Request, res:Response)=>{
+export const GET=async ()=>{
     try {
         const posts=getPosts();
         return NextResponse.json({message:'OK',posts},{status:200});
@@ -15,7 +15,7 @@ export const GET=async (req:Request, res:Response)=>{
 }
 
 
-export const POST=async (req:Request, res:Response)=>{
+export const POST=async (req:Request)=>{
     const {title,desc}=await req.json();
     try {
         const post={title,desc,id:Math.random().toString(),date:new Date().toString()}
