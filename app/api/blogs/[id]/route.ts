@@ -1,6 +1,5 @@
 import { NextResponse } from "next/server"
-import { getPosts, getById, updatePost,deletePost } from "@/lib/data";
-import { title } from "process";
+import {getById, updatePost,deletePost } from "@/lib/data";
 
 export const GET=async (req:Request)=>{
     try {
